@@ -40,3 +40,11 @@ class MultiLayersPerceptron:
             for j, _ in enumerate(weights[i]):
                 self.network[i + 1][j].weights = weights[i][j]
 
+
+p = MultiLayersPerceptron([2, 2, 1])
+p.set_weights([[[-10, -10, 15], [15, 15, -10]], [[10, 10, -15]]])
+
+print('{0:.10f}'.format(p.run([0, 0])[0]))
+print('{0:.10f}'.format(p.run([0, 1])[0]))
+print('{0:.10f}'.format(p.run([1, 0])[0]))
+print('{0:.10f}'.format(p.run([1, 1])[0]))
